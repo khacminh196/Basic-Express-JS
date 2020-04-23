@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "name": "Long",
+      "age": "19",
+      "email": "long@gmail.com",
+      "password": "123",
+      "id": "vGI5LbiNi"
+    },
+    {
+      "name": "Toan",
+      "age": "14",
+      "email": "toan123@gmail.com",
+      "password": "123456",
+      "id": "TM6Av-zCE"
+    }
+  ],
+  "products": []
+}

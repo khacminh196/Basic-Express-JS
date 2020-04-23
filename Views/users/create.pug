@@ -1,0 +1,22 @@
+extends ../Layouts/common
+
+block content
+    div.container.mt-5
+        if errors
+          each error in errors
+            div.alert.alert-danger= error
+
+        form(action="", method="post")
+          .form-group
+            label(for='disabledTextInput') Name
+            input#disabledTextInput.form-control(type='text', placeholder='Your name ... ',name="name")
+          .form-group
+            label(for='disabledTextInput') Age
+            input#disabledTextInput.form-control(type='number', placeholder='Your age ... ',name="age")
+          .form-group
+            label(for='disabledTextInput') Email
+            input#disabledTextInput.form-control(type='text', placeholder='Your email ... ',name="email")
+          .form-group
+            label(for='disabledTextInput') Password
+            input#disabledTextInput.form-control(type='password', placeholder='Your password ... ',name="password")
+          button.btn.btn-primary(type='submit') Submit
