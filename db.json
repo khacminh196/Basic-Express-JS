@@ -34,6 +34,20 @@
       "email": "chi@gmail.com",
       "password": "123",
       "id": "2LHb1bnGi"
+    },
+    {
+      "name": "khabanh",
+      "age": "19",
+      "email": "kh@gmail.com",
+      "password": "147",
+      "id": "C5iyWoLZ8"
+    },
+    {
+      "name": "xung",
+      "age": "19",
+      "email": "xung@gmail.com",
+      "password": "456",
+      "id": "-1ljfAIf1"
     }
   ],
   "products": []
