@@ -9,14 +9,14 @@ block content
         form(action="", method="post")
           .form-group
             label(for='disabledTextInput') Name
-            input#disabledTextInput.form-control(type='text', placeholder='Your name ... ',name="name")
+            input#disabledTextInput.form-control(type='text', placeholder='Your name ... ',name="name", value=values ? values.name : "")
           .form-group
             label(for='disabledTextInput') Age
-            input#disabledTextInput.form-control(type='number', placeholder='Your age ... ',name="age")
+            input#disabledTextInput.form-control(type='number', placeholder='Your age ... ',name="age", value=values ? values.age : "")
           .form-group
             label(for='disabledTextInput') Email
-            input#disabledTextInput.form-control(type='text', placeholder='Your email ... ',name="email")
+            input#disabledTextInput.form-control(type='text', placeholder='Your email ... ',name="email", value=values ? values.email : "")
           .form-group
             label(for='disabledTextInput') Password
-            input#disabledTextInput.form-control(type='password', placeholder='Your password ... ',name="password")
+            input#disabledTextInput.form-control(type='password', placeholder='Your password ... ',name="password", value=values ? values.password : "")
           button.btn.btn-primary(type='submit') Submit

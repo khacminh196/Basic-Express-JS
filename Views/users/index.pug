@@ -6,7 +6,7 @@ block content
             h1 #{nameLiss}
             a(href="users/create") New
             nav.navbar.navbar-light.bg-light
-              form.form-inline(action="users/search")
+              form.form-inline(action=qSearch ? "search" : "users/search")
                 input.form-control.mr-sm-2(type='search', placeholder='Search', name="q", value=qSearch ? qSearch : "")
                 button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
         table.table.table-striped

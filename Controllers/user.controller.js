@@ -18,3 +18,24 @@ module.exports.postCreate = (req, res) => {
 	db.get('users').push(newUser).write();
 	res.redirect('/users');
 }
+
+module.exports.view = (req, res) => {
+	var id = req.params.id;
+	console.log(id);
+	res.render('users/view', {
+		user : db.get('users').find({ id : id }).value()
+	});
+};
+
+module.exports.search =(req, res) => {
+	var query = req.query.q;
+	var users = db.get('users').value();
+	var result = users.filter((user) => {
+		return user.name.indexOf(query) !== -1;
+	});
+
+	res.render('users', {
+		users : result,
+		qSearch : query
+	});
+};
