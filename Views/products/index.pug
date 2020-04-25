@@ -1,0 +1,18 @@
+extends ../Layouts/common
+
+block content
+	form(action="products/search")
+		if !query
+			input(type="text", name="q", value="")
+		else
+			input(type="text", name="q", value="" + query)
+		button Tim Kiem
+	a(href="products/create") Them san pham
+	if products.length > 0
+		ul
+			each product in products
+				li= product.name
+				a(href="products/delete/" + product.id) Xoa san pham
+				a(href="products/view/" + product.id) View
+	else
+		p.thongbao Khong tim thay san pham nao

@@ -1,0 +1,11 @@
+extends ../Layouts/common
+
+block content
+    div.container.mt-5
+        if errors
+          each error in errors
+            div.alert.alert-danger= error
+        form(action="", method="post")
+            label Name
+            input(type="text", name="name", value=values ? values.name : "")
+            button Them

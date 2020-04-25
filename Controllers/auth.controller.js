@@ -1,3 +1,5 @@
+var md5 = require('md5');
+
 var db = require('../db.js');
 
 module.exports.login = (req, res) => {
@@ -6,7 +8,7 @@ module.exports.login = (req, res) => {
 
 module.exports.postLogin = (req, res) => {
 	var email = req.body.email;
-	var password = req.body.password;
+	var password = md5(req.body.password);
 
 	var user = db.get('users').find({ email : email }).value();
 	if(!user) {
