@@ -19,4 +19,6 @@ html
 						a(class="nav-item nav-link", href="/users") Users
 						a(class="nav-item nav-link", href="/products") Products
 						a(class="nav-item nav-link disabled") Disabled	
+					if user
+						p= user.name
 		block content
