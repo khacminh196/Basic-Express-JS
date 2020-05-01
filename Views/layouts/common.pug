@@ -18,7 +18,12 @@ html
 						a(class="nav-item nav-link active", href="/") Home
 						a(class="nav-item nav-link", href="/users") Users
 						a(class="nav-item nav-link", href="/products") Products
-						a(class="nav-item nav-link disabled") Disabled	
+						a(class="nav-item nav-link", href="/cart") Cart (
+							if cartNumber
+								span= cartNumber
+							else
+								span 0
+							span )
 					if user
 						p= user.name
 		block content

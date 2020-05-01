@@ -4,8 +4,22 @@ var shortid = require('shortid');
 var products = db.get('products').value();
 
 module.exports.index = (req, res) => {
+	var page = parseInt(req.query.page) || 1;		// n
+	var perPage = 8;								// x
+	var start = (page-1)*perPage; 				// (n-1)*x
+	var end = page*perPage;						// n*x
+	var numberPage = Math.ceil(products.length/perPage);
+
+	var pageMax = page + 2;
+	if(pageMax > numberPage) {
+		pageMax = page;
+	}
+
+	var results = products.slice(start, end);
+
 	res.render('products/index', {
-		products : products
+		products : results,
+		number : page
 	});
 }
 

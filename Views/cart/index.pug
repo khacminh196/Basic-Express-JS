@@ -1,0 +1,17 @@
+extend ../layouts/common
+
+block content
+    div.container.mt-5
+        table.table.table-dark
+          thead
+            tr
+              th(scope='col') Product
+              th(scope='col') Quantity 
+              th(scope='col') Money
+          tbody
+            if mycart
+                each val, key in cart
+                    tr
+                        th= key
+                        th= val
+                        th 9000

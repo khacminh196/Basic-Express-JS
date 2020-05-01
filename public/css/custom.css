@@ -3,3 +3,61 @@
 .div-to {
 	display: flex;
 }
+
+.products-container{
+	display: flex;
+	width: 300px;
+	height: 150px;
+	align-items: center;
+	border: 1px solid;
+	border-color: #CCC;
+	border-radius: 10px;
+	float: left;
+}
+
+.product-img {
+	padding: 0px 15px; 
+}
+
+.product-infomation {
+	/*padding-bottom: 15px;*/
+}
+
+.product-infomation p:first-child {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.product-infomation .p-money {
+	color: red;
+	font-size: 18px;
+}
+
+.btnAdd {
+	width: 120px;
+	height: 40px;
+	border-radius: 10px;
+	color: red;
+	background-color: white;
+	font-size: 18px;
+    border: 1px solid #FF324D;
+    /*color: #fff;*/
+    /*position: relative;*/
+    /*overflow: hidden;*/
+    /*z-index: 1;*/
+    transform: scale(0.9);
+    transition: all 0.5s;
+}
+
+.btnAdd:hover {
+	transform: scale(1);
+	background-color: red;
+	color: white;
+}
+
+.div-pagination{
+	float: right;
+	/*position: relative;*/
+	/*top: 450px;*/
+	/*right: 500px;*/
+}

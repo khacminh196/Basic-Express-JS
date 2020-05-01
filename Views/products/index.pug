@@ -1,18 +1,40 @@
 extends ../Layouts/common
 
 block content
-	form(action="products/search")
-		if !query
-			input(type="text", name="q", value="")
-		else
-			input(type="text", name="q", value="" + query)
-		button Tim Kiem
-	a(href="products/create") Them san pham
-	if products.length > 0
-		ul
-			each product in products
-				li= product.name
-				a(href="products/delete/" + product.id) Xoa san pham
-				a(href="products/view/" + product.id) View
-	else
-		p.thongbao Khong tim thay san pham nao
+    form(action="products/search")
+        if !query
+            input(type="text", name="q", value="")
+        else
+            input(type="text", name="q", value="" + query)
+        button Tim Kiem
+    p
+        a(href="products/create") Them san pham
+    if products.length > 0
+            each product in products
+                .products-container.mt-5
+                  .product-img
+                    img(src='../images/product.jpg', width='100px')
+                  .product-infomation
+                    p= product.name
+                    p.p-money $55.00
+                    button.btnAdd
+                        a(href="cart/add/" + product.id) Add To Cart
+                    button.btnAdd
+                        a(href="products/view/" + product.id) Delete
+            .div-pagination
+                nav(aria-label='...')
+                  ul.pagination
+                    li.page-item
+                      a.page-link(href='?page='+ (number-1), tabindex='-1', aria-disabled='true') Previous
+                    li.page-item
+                      a.page-link(href=number==1 ? '?page=1' : '?page=' + (number-1))= number==1 ? '1' : number-1
+                    li.page-item
+                      a.page-link(href=number==1 ? '?page=2' : '?page=' + number)= number==1 ? '2' : number
+                    li.page-item
+                      a.page-link(href=number==1 ? '?page=3' : '?page=' + (number+1))= number==1 ? '3' : number+1
+                    li.page-item
+                      a.page-link(href=number==1 ? '?page=4' : '?page=' + (number+2))= number==1 ? '4' : number+2
+                    li.page-item
+                      a.page-link(href='?page='+ (number+1)) Next
+    else
+        p.thongbao Khong tim thay san pham nao

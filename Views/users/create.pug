@@ -6,13 +6,16 @@ block content
           each error in errors
             div.alert.alert-danger= error
 
-        form(action="", method="post")
+        form(action="", method="post", enctype="multipart/form-data")
           .form-group
             label(for='disabledTextInput') Name
             input#disabledTextInput.form-control(type='text', placeholder='Your name ... ',name="name", value=values ? values.name : "")
           .form-group
             label(for='disabledTextInput') Age
             input#disabledTextInput.form-control(type='number', placeholder='Your age ... ',name="age", value=values ? values.age : "")
+          .form-group
+            label(for='disabledTextInput') Avatar
+            input#disabledTextInput.form-control(type='file', placeholder='Your avatar ...', name='avatar')
           .form-group
             label(for='disabledTextInput') Email
             input#disabledTextInput.form-control(type='text', placeholder='Your email ... ',name="email", value=values ? values.email : "")
